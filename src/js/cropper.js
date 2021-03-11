@@ -50,7 +50,7 @@ class Cropper {
     if (!element || !REGEXP_TAG_NAME.test(element.tagName)) {
       throw new Error('The first argument is required and must be an <img> or <canvas> element.');
     }
-
+    // image dom
     this.element = element;
     this.options = assign({}, DEFAULTS, isPlainObject(options) && options);
     this.cropped = false;
@@ -80,6 +80,7 @@ class Cropper {
 
       // e.g.: "img/picture.jpg"
       url = element.getAttribute('src') || '';
+      // 图片url
       this.originalUrl = url;
 
       // Stop when it's a blank image
@@ -206,7 +207,7 @@ class Cropper {
     const { element, url } = this;
     let { crossOrigin } = element;
     let crossOriginUrl = url;
-
+    // 跨域图片就手动加属性
     if (this.options.checkCrossOrigin && isCrossOriginURL(url)) {
       if (!crossOrigin) {
         crossOrigin = 'anonymous';
@@ -444,7 +445,7 @@ class Cropper {
     assign(DEFAULTS, isPlainObject(options) && options);
   }
 }
-
+//mixin模式扩展Cropper类
 assign(Cropper.prototype, render, preview, events, handlers, change, methods);
 
 export default Cropper;

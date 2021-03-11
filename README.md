@@ -1,3 +1,53 @@
+
+# 源码分析
+
+## 文件结构
+
+``` bash
+/Users/liufang/openSource/FunnyLiu/cropperjs
+├── src
+|  ├── css
+|  |  ├── cropper.css
+|  |  └── cropper.scss
+|  ├── images
+|  |  └── bg.png
+|  ├── index.css
+|  ├── index.js
+|  ├── index.scss
+|  └── js
+|     ├── change.js
+|     ├── constants.js
+|     ├── cropper.js
+|     ├── defaults.js
+|     ├── events.js
+|     ├── handlers.js
+|     ├── methods.js
+|     ├── preview.js
+|     ├── render.js
+|     ├── template.js
+|     └── utilities.js
+└── types
+   └── index.d.ts
+
+directory: 15 file: 132
+
+ignored: directory (1)
+
+```
+
+## 外部模块依赖
+
+![img](./outer.svg)
+
+## 内部模块依赖
+
+![img](./inner.svg)
+  
+## 工作原理
+
+是一个截图组件，通过api调用，使用canvas来进行图片的各种各样的操作，然后裁切生成新图片返回。
+
+
 # Cropper.js
 
 [![Build Status](https://img.shields.io/travis/fengyuanchen/cropperjs.svg)](https://travis-ci.org/fengyuanchen/cropperjs) [![Downloads](https://img.shields.io/npm/dm/cropperjs.svg)](https://www.npmjs.com/package/cropperjs) [![Version](https://img.shields.io/npm/v/cropperjs.svg)](https://www.npmjs.com/package/cropperjs) [![Gzip Size](https://img.shields.io/bundlephobia/minzip/cropperjs.svg)](https://unpkg.com/cropperjs/dist/cropper.common.js) [![Dependencies](https://img.shields.io/david/fengyuanchen/cropperjs.svg)](https://www.npmjs.com/package/cropperjs)
